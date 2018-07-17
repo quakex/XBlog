@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 source 'https://gems.ruby-china.com'
+=======
+source 'https://gems.ruby-china.org'
+>>>>>>> 98b5de5... part init
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
