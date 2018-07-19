@@ -7,6 +7,6 @@
     <p>
       <%= @post.display_day_published %>
     </p>
-    <%= @post.body %>
+    <%= @post.body.html_safe %>
   </div>
 </div>
