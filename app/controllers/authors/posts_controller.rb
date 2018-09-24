@@ -13,11 +13,12 @@ module Authors
     # GET /posts/1
     # GET /posts/1.json
     def show
+
     end
 
     # GET /posts/new
     def new
-      @post =current_author.posts.new
+      @post = current_author.posts.new
     end
 
     # GET /posts/1/edit
@@ -36,7 +37,7 @@ module Authors
     # POST /posts
     # POST /posts.json
     def create
-      @post =current_author.posts.new(post_params)
+      @post = current_author.posts.new(post_params)
 
       respond_to do |format|
         if @post.save
