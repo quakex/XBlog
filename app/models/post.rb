@@ -16,13 +16,20 @@
 #
 
 class Post < ApplicationRecord
+  acts_as_taggable
 
   extend FriendlyId
   friendly_id :title, use: :slugged
   belongs_to :author
 
-  scope :most_recent, -> {order(published_at: :desc)}
+  scope :most_recent, -> { order(published_at: :desc) }
   scope :published, -> { where(published: true) }
+  scope :recent_paginated, -> (page) {most_recent.paginate(:page => page, per_page: 3)}
+  scope :with_tag, -> (tag) {tagged_with(tag) if tag.present?}
+
+  def self.list_for(page, tag)
+    recent_paginated(page).with_tag(tag)
+  end
 
   def should_generate_new_friendly_id?
     title_changed?
@@ -40,7 +47,11 @@ class Post < ApplicationRecord
     if published_at.present?
       "Published #{published_at.strftime('%-b %-d, %Y')}"
     else
+<<<<<<< HEAD
+      'Not pushlished yet'
+=======
       "Not pushlished yet"
+>>>>>>> bf1a986... finish part8: publish paginate
     end
   end
 end

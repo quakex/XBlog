@@ -37,10 +37,7 @@ gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'friendly_id', '~> 5.1.0' # Note: You MUST use 5.0.0 or greater for Rails 4.0+
 gem 'devise'
 gem 'will_paginate', '~> 3.1.0'
-<<<<<<< HEAD
 gem 'acts-as-taggable-on', '~> 6.0'
-=======
->>>>>>> bf1a986... finish part8: publish paginate
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -49,6 +46,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 end
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
